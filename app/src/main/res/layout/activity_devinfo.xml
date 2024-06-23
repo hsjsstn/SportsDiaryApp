@@ -10,17 +10,17 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="96dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@android:mipmap/sym_def_app_icon" />
+        tools:srcCompat="@mipmap/dev_profile" />
 
     <TextView
         android:id="@+id/devName"
         android:layout_width="95dp"
         android:layout_height="52dp"
         android:layout_marginStart="156dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:text="한수진"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -28,81 +28,84 @@
         app:layout_constraintTop_toBottomOf="@+id/devImg" />
 
     <TextView
-        android:id="@+id/devNum"
-        android:layout_width="164dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="8dp"
-        android:text="20220812"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/devName" />
-
-    <TextView
-        android:id="@+id/devSubject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="8dp"
-        android:text="모바일소프트웨어 (02)"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/devNum" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="204dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginBottom="76dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/devSubject"
-        app:layout_constraintVertical_bias="0.36"
-        app:srcCompat="@mipmap/hle" />
-
-    <TextView
         android:id="@+id/devTeam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="16dp"
-        android:text="Dev's Team"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="36dp"
+        android:text="Contact"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/devSubject" />
+        app:layout_constraintTop_toBottomOf="@+id/devName" />
 
     <Button
         android:id="@+id/devBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
+        android:layout_marginBottom="16dp"
         android:text="뒤로 가기"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.836" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/rateText"
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="12dp"
-        android:text="앱 평가하기"
-        android:textStyle="bold"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"
+        android:text="Insta"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/devTeam" />
 
-    <RatingBar
-        android:id="@+id/ratingBar"
+    <TextView
+        android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toBottomOf="@+id/devBack"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:text="\@hsjsstn"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/devTeam" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:text="Github"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="github.com/hsjsstn"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="개발자 정보"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

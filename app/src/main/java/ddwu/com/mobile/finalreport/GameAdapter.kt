@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ddwu.com.mobile.finalreport.databinding.ListItemBinding
 
 
-class GameAdapter(val games: ArrayList<GameDto>) : RecyclerView.Adapter<GameAdapter.GameViewHolder>() {
+class GameAdapter(var games: ArrayList<GameDto>) : RecyclerView.Adapter<GameAdapter.GameViewHolder>() {
     private var displayedGames = ArrayList<GameDto>(games)
 
     override fun getItemCount() = displayedGames.size
@@ -38,6 +38,7 @@ class GameAdapter(val games: ArrayList<GameDto>) : RecyclerView.Adapter<GameAdap
         }
     }
 
+
     interface OnItemClickListener {
         fun onItemClick(view: View, position: Int): Unit
     }
@@ -62,5 +63,8 @@ class GameAdapter(val games: ArrayList<GameDto>) : RecyclerView.Adapter<GameAdap
         displayedGames.clear()
         displayedGames.addAll(filteredList)
         notifyDataSetChanged()
+    }
+    fun getGameAtPosition(position: Int): GameDto {
+        return displayedGames[position]
     }
 }

@@ -12,7 +12,7 @@
         android:id="@+id/option1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="기록 작성하기" />
+        android:title="기록 작성" />
     <item
         android:id="@+id/option2"
         android:layout_width="wrap_content"

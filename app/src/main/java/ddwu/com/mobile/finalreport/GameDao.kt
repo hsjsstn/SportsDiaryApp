@@ -9,6 +9,5 @@ class GameDao {
         games.add(GameDto(R.mipmap.kia_tigers, "KIA vs 한화", "240621", "baseball", "역시 기아타이거즈가 1등이 맞다."))
         games.add(GameDto(R.mipmap.hle, "BRO vs HLE", "240621", "esports(LOL)", "우리 팀은 꼭 상대팀이 게임을 못해야 이기더라."))
         games.add(GameDto(R.mipmap.hle, "HLE vs KT", "240623", "esports(LOL)", "드디어 내가 알던 우리 팀이 돌아왔다!"))
-
     }
 }

@@ -67,6 +67,9 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener  {
                         games.removeAt(position)
                         adapter.notifyItemRemoved(position)
                         adapter.notifyItemRangeChanged(position, games.size)
+                        filteredList.clear()
+                        filteredList.addAll(games)
+                        (binding.recyclerView.adapter as GameAdapter).filterList(filteredList)
                     }
                     .setNegativeButton("취소") { dialog, which ->
                         dialog.dismiss()
