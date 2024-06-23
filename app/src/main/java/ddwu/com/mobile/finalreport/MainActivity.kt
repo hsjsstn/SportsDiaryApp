@@ -101,6 +101,9 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener  {
 
             if (newTitle != null && newDate != null && newCategory != null && newDetail != null) {
                 games.add(GameDto(newImg, newTitle, newDate, newCategory, newDetail))
+                filteredList.clear()
+                filteredList.addAll(games)
+                (binding.recyclerView.adapter as GameAdapter).filterList(filteredList)
                 binding.recyclerView.adapter?.notifyDataSetChanged()
             }
         }
@@ -126,6 +129,9 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener  {
                 games[pos].detail = editDetail
                 pos = -1
                 binding.recyclerView.adapter?.notifyDataSetChanged()
+                filteredList.clear()
+                filteredList.addAll(games)
+                (binding.recyclerView.adapter as GameAdapter).filterList(filteredList)
             }
         }
     }
@@ -134,7 +140,6 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener  {
         menuInflater.inflate(R.menu.option_menu, menu)
 
         val searchView = menu?.findItem(R.id.app_bar_search)?.actionView as SearchView
-        //searchView.queryHint = getString(R.string.search_view_hint)
         searchView.setOnQueryTextListener(this)
 
         return super.onCreateOptionsMenu(menu)
