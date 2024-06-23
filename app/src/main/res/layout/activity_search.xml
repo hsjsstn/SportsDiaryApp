@@ -8,10 +8,10 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/record"
+        android:id="@+id/searchText"
         android:layout_width="142dp"
         android:layout_height="43dp"
-        android:text="경기 기록"
+        android:text="경기 검색"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/filteredRecyclerView"
         android:layout_width="409dp"
         android:layout_height="661dp"
         android:layout_marginTop="70dp"

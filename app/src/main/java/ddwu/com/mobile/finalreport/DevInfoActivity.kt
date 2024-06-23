@@ -12,7 +12,7 @@ class DevInfoActivity : AppCompatActivity() {
         ActivityDevinfoBinding.inflate(layoutInflater)
     }
 
-    val MAIN_ACTIVITY_CODE = 400
+    val MAIN_ACTIVITY_CODE = 500
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

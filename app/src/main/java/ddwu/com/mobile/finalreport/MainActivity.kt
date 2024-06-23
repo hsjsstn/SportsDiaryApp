@@ -5,18 +5,21 @@
 
 package ddwu.com.mobile.finalreport
 
+import android.app.SearchManager
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import ddwu.com.mobile.finalreport.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener  {
     val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     val EDIT_ACTIVITY_CODE = 200
     val DEV_INFO_ACTIVITY_CODE = 300
     val games = GameDao().games
+    val filteredList = ArrayList<GameDto>()
     var pos = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -125,6 +129,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
+
+        val searchView = menu?.findItem(R.id.app_bar_search)?.actionView as SearchView
+        //searchView.queryHint = getString(R.string.search_view_hint)
+        searchView.setOnQueryTextListener(this)
+
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -132,7 +141,32 @@ class MainActivity : AppCompatActivity() {
         return super.onPrepareOptionsMenu(menu)
     }
 
+    // 검색 기능
+    override fun onQueryTextChange(newText: String): Boolean {
+        filteredList.clear()
+        val query = newText.toLowerCase()
+
+        if (query.isEmpty()) {
+            // 검색어가 비어 있을 때 전체 데이터를 보여줌
+            filteredList.addAll(games)
+        } else {
+            for (game in games) {
+                if (game.title.toLowerCase().contains(query)) {
+                    filteredList.add(game)
+                }
+            }
+        }
+        (binding.recyclerView.adapter as GameAdapter).filterList(filteredList)
+        return true
+    }
+
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
         when (item.itemId) {
             R.id.option1 -> { // 기록 추가하기
                 val intent = Intent(this, AddActivity::class.java)
@@ -148,7 +182,7 @@ class MainActivity : AppCompatActivity() {
                 val builder = AlertDialog.Builder(this@MainActivity)
                 builder.setTitle("앱 종료")
                     .setMessage("앱을 종료하시겠습니까?")
-                    .setPositiveButton("종료") { dialog, which->
+                    .setPositiveButton("종료") { dialog, which ->
                         finish()
                     }
                     .setNegativeButton("취소") { dialog, which ->
@@ -156,6 +190,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 builder.show()
             }
+
         }
 
         return true
