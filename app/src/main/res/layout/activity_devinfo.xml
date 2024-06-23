@@ -10,7 +10,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@android:mipmap/sym_def_app_icon" />
@@ -20,7 +20,7 @@
         android:layout_width="95dp"
         android:layout_height="52dp"
         android:layout_marginStart="156dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:text="한수진"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -32,7 +32,7 @@
         android:layout_width="164dp"
         android:layout_height="44dp"
         android:layout_marginStart="120dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="20220812"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="모바일소프트웨어 (02)"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -53,14 +53,14 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="237dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="84dp"
+        android:layout_width="204dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="112dp"
         android:layout_marginBottom="76dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/devSubject"
-        app:layout_constraintVertical_bias="0.888"
+        app:layout_constraintVertical_bias="0.36"
         app:srcCompat="@mipmap/hle" />
 
     <TextView
@@ -68,8 +68,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="20dp"
-        android:text="My Team"
+        android:layout_marginTop="16dp"
+        android:text="Dev's Team"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,10 +79,30 @@
         android:id="@+id/devBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
+        android:layout_marginStart="156dp"
         android:text="뒤로 가기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.489" />
+        app:layout_constraintVertical_bias="0.836" />
+
+    <TextView
+        android:id="@+id/rateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="12dp"
+        android:text="앱 평가하기"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/devBack"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
